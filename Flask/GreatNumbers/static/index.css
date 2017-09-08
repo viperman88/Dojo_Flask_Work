@@ -1,0 +1,30 @@
+body{
+    text-align: center;
+}
+
+    .wrapper{
+        height: 500px;
+        width: 970px;
+        margin-left: 0px;
+        background-color: grey;
+    }
+
+        div{
+            height: 150px;
+            width: 200px;
+            border: 1px solid black;
+            background-color: red;
+            text-align: center;
+            margin-left: 383px;
+            margin-top: 20px;
+            font-size: 14pt;
+        }
+
+        .won{
+            background-color: green;
+            font-size: 14pt;
+        }
+
+            h2{
+                margin-bottom: 10px;
+            }

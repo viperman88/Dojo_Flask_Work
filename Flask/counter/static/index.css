@@ -1,0 +1,26 @@
+
+div{
+    width: 970px;
+    height: auto;
+    background-color: slategrey;
+}
+
+    h1{
+        font-size: 40pt;
+        color: maroon;
+        text-align: center;
+    }
+
+    a{
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16pt;
+        color: navy;
+    }
+
+    p{
+        text-align: center;
+        font-size: 14pt;
+        color: cyan;
+    }

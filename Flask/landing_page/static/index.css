@@ -1,0 +1,21 @@
+
+body{
+    background-image: url("http://cdn.playbuzz.com/cdn/135533e4-8b11-4af0-8638-6525eff069e0/9d2f35d6-a75a-44e7-8259-6ff1abb00ce4.jpg")
+}
+
+a{
+    color: white;
+    font-size: 20pt;
+    margin-left: 20px;
+}
+
+h1{
+    color: blue;
+    font-style: italic;
+    font-size: 40pt;
+    margin-left: 20px;
+}
+
+img{
+    width: 300px;
+}

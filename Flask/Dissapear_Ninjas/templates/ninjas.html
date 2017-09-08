@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{url_for("static", filename = "index.css")}}">
+        <title>All Ninja Turtles</title>
+    </head>
+    <body>
+
+        {% if allNinjas == True %}
+            <img src="/static/Ninjas/donatello.jpg" alt="purple turtle">
+            <img src="/static/Ninjas/leonardo.jpg" alt="blue turtle">
+            <img src="/static/Ninjas/michelangelo.jpg" alt="orange turtle">
+            <img src="/static/Ninjas/raphael.jpg" alt="red turtle">
+        {% endif %}
+
+        {% if allNinjas == False %}
+            {% if color == 'blue' %}
+                <img src="/static/Ninjas/leonardo.jpg" alt="blue turtle">
+            {% elif color == 'purple' %}
+                <img src="/static/Ninjas/donatello.jpg" alt="purple turtle">
+            {% elif color == 'orange' %}
+                <img src="/static/Ninjas/michelangelo.jpg" alt="orange turtle">
+            {% elif color == 'red' %}
+                <img src="/static/Ninjas/raphael.jpg" alt="red turtle">
+            {% else %}
+                <img src="/static/Ninjas/notapril.jpg" alt="april">
+            {% endif %}
+        {% endif %}
+
+    </body>
+</html>

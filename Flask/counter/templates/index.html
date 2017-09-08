@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{url_for("static", filename = "index.css")}}">
+        <title>Counter Project</title>
+    </head>
+    <body>
+
+        <div class="main">
+
+            <h1>Counter</h1>
+            <a href="/ninja">Ninja + 2</a>
+            <a href="/clear">Reset Hacker</a>
+            <p>{{session['counter']}}</p>
+
+        </div>
+
+    </body>
+</html>

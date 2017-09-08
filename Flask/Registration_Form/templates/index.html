@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Registration Form</title>
+        <link rel="stylesheet" href="{{url_for("static", filename = "index.css")}}">
+    </head>
+
+    <body>
+
+        <h1>Registration Form</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <p id="flash">{{message}}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form action='/process' method='POST'>
+
+            Date of Birth:<input type="date" name="dob">
+            Email:<input type="email" name="email">
+            First Name:<input type="text" name="first_name">
+            Last Name:<input type="text" name="last_name">
+            Password:<input type="password" name="password">
+            Confirm Password:<input type="password" name="conf_pass">
+            <input type="submit" value="Submit">
+
+        </form>
+
+    </body>
+
+</html>

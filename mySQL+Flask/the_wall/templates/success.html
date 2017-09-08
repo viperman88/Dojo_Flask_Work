@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>The Wall</title>
+        <link rel="stylesheet" href="{{url_for("static", filename = "success.css")}}">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            setTimeout(function() {
+                $('.flash').fadeOut('fast');
+            }, 5000); // <-- time in milliseconds
+        });
+
+        </script>
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+
+            <div class="success">
+                <h1>Welcome to The Wall</h1>
+                <p>Welcome {{ session['user'] }}</p>
+                <a href="/logout">Log Off</a>
+            </div>
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <p class="flash" >{{message}}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+            <h2>Post a Message</h2>
+            <form class="post" action="/post_message" method="post">
+                <textarea name="add_message" rows="8" cols="120"></textarea>
+                <input type="submit" value="Post a Message">
+            </form>
+
+            <div class="message">
+                {% for message in messages %}
+                <h3>{{ message['first_name'] }} {{ message['last_name'] }} - {{ message['created_date'] }}</h3>
+                <p>{{ message['messages'] }}</p>
+                    {% if message['user_id'] == session['user_id'] %}
+                        <a href="/messages/{{ message['id'] }}/delete">Delete Message</a>
+                    {% endif %}
+                    <hr width='750px' align='left'>
+                    {% for comment in comments %}
+                        {% if message['id'] == comment["message_id"] %}
+                            <h4 class="comment_header">{{ comment['first_name'] }} {{ comment['last_name'] }} - {{ comment['created_date'] }}</h4>
+                            <p>{{ comment['comments'] }}</p>
+                            {% if comment['user_id'] == session['user_id'] %}
+                                <a href="/comments/{{ comment['id'] }}/delete">Delete Comment</a>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    <h4>Post a Comment</h4>
+                    <form class="comment" action="/post_comment/{{ message['id'] }}" method="post">
+                        <textarea name="add_comment" rows="4" cols="110"></textarea>
+                        <input type="submit" value="Post a Comment">
+                    </form>
+                <hr>
+                {% endfor %}
+            </div>
+
+        </div>
+
+    </body>
+</html>

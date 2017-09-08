@@ -1,0 +1,27 @@
+
+#wrapper{
+    background-color: slategrey;
+    width: 970px;
+    height: 600px;
+    padding-top: 20px;
+}
+
+a{
+    margin-left: 20px;
+}
+
+h1{
+    color: maroon;
+    margin-left: 20px;
+}
+
+p{
+    font-size: 20pt;
+    color: blue;
+    margin-left: 20px;
+}
+
+img{
+    width: 300px;
+    margin-left: 20px;
+}

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="dojos" content="Dojos flask project">
+        <link rel="stylesheet" type="text/css" href="{{url_for("static", filename = "Dojos.css")}}">
+        <title>Dojos Flask Project</title>
+    </head>
+    <body>
+
+        <a href="/">Home</a>
+        <a href="/ninjas">Ninjas</a>
+
+        <h1>Dojo Form</h1>
+
+        <img src="https://s-media-cache-ak0.pinimg.com/originals/28/e4/32/28e4327285ec11459982000350e0bcc9.jpg" alt="dojo">
+
+        <form class="dojo" action="index.html" method="post">
+
+            <aside id="first">
+
+                <label for="First Name">First Name</label>
+                <input type="text" name="first" placeholder="First Name">
+
+            </aside>
+
+            <aside id="last">
+
+                <label for="Last Name">Last Name</label>
+                <input type="text" name="last" placeholder="Last Name">
+
+            </aside>
+
+            <aside id="age">
+
+                <label for="Age">Age</label>
+                <input type="text" name="age" placeholder="Age">
+
+            </aside>
+
+            <button type="button" name="button">Submit</button>
+
+        </form>
+    </body>
+</html>

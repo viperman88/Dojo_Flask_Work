@@ -1,0 +1,101 @@
+.wrapper{
+    width: 970px;
+    height: auto;
+    background-color: darkgrey;
+    border: 1px solid black;
+}
+
+    .flash{
+        margin-left: 20px;
+        color: green;
+        font-size: 20pt;
+    }
+
+    .success{
+        display: inline-block;
+        width: 100%;
+        background-color: #0049F1;
+        height: 80px;
+        border-bottom: 4px solid cyan;
+    }
+
+        .success > h1{
+            display: inline-block;
+            font-size: 24pt;
+            color: white;
+            margin-left: 20px;
+        }
+
+        .success > p{
+            display: inline-block;
+            margin-left: 420px;
+            color: white;
+        }
+
+        .success > a{
+            display: inline-block;
+            margin-left: 20px;
+            color: cyan;
+        }
+
+    h2{
+        margin-left: 20px;
+        margin-bottom: 5px;
+    }
+
+    .post > textarea{
+        margin-left: 20px;
+    }
+
+    .post > input{
+        display: block;
+        margin-left: 645px;
+        background-color: blue;
+        color: white;
+        border-radius: 10px;
+        font-size: 10pt;
+    }
+
+    .message > h3{
+        margin-left: 20px;
+        font-size: 20pt;
+    }
+
+    .message > p{
+        margin-left: 60px;
+        margin-right: 240px;
+    }
+
+    .message > h4{
+        margin-left: 60px;
+        margin-bottom: 5px;
+        font-size: 16pt;
+    }
+
+    .message > a{
+        margin-left: 60px;
+        font-size: 10pt;
+    }
+
+        .comment_header{
+            margin-left: 60px;
+            margin-bottom: 5px;
+            color: green;
+        }
+
+        .comment > textarea{
+            margin-left: 60px;
+        }
+
+        .comment > input{
+            display: block;
+            margin-left: 620px;
+            background-color: green;
+            color: white;
+            border-radius: 10px;
+            font-size: 10pt;
+        }
+
+        .comment > p{
+            margin-left: 60px;
+        }

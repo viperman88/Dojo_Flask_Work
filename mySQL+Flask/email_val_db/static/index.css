@@ -1,0 +1,31 @@
+.wrapper{
+    width: 970px;
+    height: 600px;
+    background-color: darkgrey;
+    padding-top: 20px;
+}
+
+    .errors{
+        width: 220px;
+        height: 50px;
+        background-color: red;
+        overflow-y: scroll;
+        margin-top: 10px;
+        margin-left: 338px;
+    }
+
+        p{
+            text-align: center;
+            font-size: 16pt;
+            color: white;
+        }
+
+        form{
+            font-size: 16pt;
+            margin-left: 200px;
+            margin-top: 20px;
+        }
+
+        input{
+            font-size: 12pt;
+        }

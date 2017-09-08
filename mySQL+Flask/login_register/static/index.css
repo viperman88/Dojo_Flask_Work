@@ -1,0 +1,14 @@
+.wrapper{
+    height: auto;
+    width: 970px;
+    background-color: darkgrey;
+}
+
+    .input_info{
+        height: auto;
+        width: 230px;
+    }
+
+        form{
+            display: block;
+        }
