@@ -1,0 +1,15 @@
+.wrapper{
+    height: auto;
+    width: 500px;
+    background-color: slategrey;
+    border: 5px solid black;
+    border-radius: 100px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+    h1{
+        color: maroon;
+        font-size: 28pt;
+        text-shadow: 2px 2px black;
+    }
