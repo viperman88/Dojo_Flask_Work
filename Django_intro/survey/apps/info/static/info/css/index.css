@@ -1,0 +1,13 @@
+.wrapper{
+    height: auto;
+    width: 560px;
+    border: 2px solid black;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    background-color: lightgrey;
+}
+
+    p{
+        display: block;
+    }
