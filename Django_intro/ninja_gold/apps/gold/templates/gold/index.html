@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'gold/css/style.css' %}" media="screen" title="no title"  charset="utf-8">
+    <link rel="stylesheet" href="{% static 'gold/css/Projects-Horizontal.css' %}" media="screen" title="no title"  charset="utf-8">
+    <link rel="stylesheet" href="{% static 'gold/css/Navigation-with-Search1.css' %}" media="screen" title="no title"  charset="utf-8">
+    <link rel="stylesheet" href="{% static 'gold/css/Footer-Basic.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-default navigation-clean-search" style="background-color:rgb(98,99,120);">
+            <div class="container">
+                <div class="navbar-header"><a class="navbar-brand navbar-link" href="#" style="color:#ded5d5;font-size:26px;">Ninja Gold Services</a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav"></ul>
+                    <form class="navbar-form navbar-left" target="_self">
+                        <div class="form-group">
+                            <label class="control-label" for="search-field"><i class="glyphicon glyphicon-search"></i></label>
+                            <input class="form-control search-field" type="search" name="search" id="search-field">
+                        </div>
+                    </form>{% csrf_token %}<a class="btn btn-default navbar-btn navbar-right action-button" role="button" href="/you_won">Cash Out</a></div>
+            </div>
+        </nav>
+    </div>
+    <div class="projects-horizontal" style="background-color:rgb(237,234,230);">
+        <div class="container">
+            <div class="intro">
+                <h1 class="text-center" style="font-size:52px;">Ninja Gold</h1>
+                <p class="text-center" style="font-size:24px;">Players current gold amount: {{ request.session.my_gold }}</p>
+                <hr style="border-color:silver;">
+            </div>
+            <div class="row projects">
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img class="img-responsive" src="{% static "gold/Images/farm.jpg" %}" alt="My image" width="200px" height="200px" style="height:100px;width:179px;">
+                        </div>
+                        <div class="col-md-7" style="height:100px;">
+                            <h3 class="name" style="font-size:23px;">Farm</h3>
+                            <p class="description" style="font-size:18px;">Earn 10-20 Golds</p>
+                            <form action="/money" method="POST">{% csrf_token %}
+                                <input type="hidden" name="building" value="Farm">
+                                <button class="btn btn-primary btn-xs" type="submit" style="margin:10px 0px;">Find Gold</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img class="img-responsive" src="{% static "gold/Images/cave.jpg" %}" alt="My image" width="200px" height="200px" style="height:100px;width:179px;">
+                        </div>
+                        <div class="col-md-7" style="height:100px;">
+                            <h3 class="name" style="font-size:23px;">Cave </h3>
+                            <p class="description" style="font-size:18px;">Earn 5-10 Golds</p>
+                            <form action="/money" method="POST">{% csrf_token %}
+                                <input type="hidden" name="building" value="Cave">
+                                <button class="btn btn-primary btn-xs" type="submit" style="margin:10px 0px;">Find Gold</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item" style="height:107px;">
+                    <div class="row" style="height:103px;">
+                        <div class="col-md-5">
+                            <img class="img-responsive" src="{% static "gold/Images/house.jpg" %}" alt="My image" width="200px" height="200px" style="height:100px;width:179px;">
+                        </div>
+                        <div class="col-md-7" style="height:100px;">
+                            <h3 class="name" style="font-size:23px;">House </h3>
+                            <p class="description" style="font-size:18px;">Earn 2-5 Golds</p>
+                            <form action="/money" method="POST">{% csrf_token %}
+                                <input type="hidden" name="building" value="House">
+                                <button class="btn btn-primary btn-xs" type="submit" style="margin:10px 0px;">Find Gold</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img class="img-responsive" src="{% static "gold/Images/casino.png" %}" alt="My image" width="200px" height="200px" style="height:100px;width:179px;">
+                        </div>
+                        <div class="col-md-7" style="height:100px;">
+                            <h3 class="name" style="font-size:23px;">Casino </h3>
+                            <p class="description" style="font-size:18px;">Earn/Takes 0-50 Golds</p>
+                            <form action="/money" method="POST">{% csrf_token %}
+                                <input type="hidden" name="building" value="Casino">
+                                <button class="btn btn-primary btn-xs" type="submit" style="margin:10px 0px;">Find Gold</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size:19px;text-align:center;">Activities: </p>
+            <hr style="border-color:silver;">
+        </div>
+    </div>
+    <div style="height:200px;background-color:rgb(237,235,231);padding:0px 48px;overflow-x: scroll;">
+        {% for activity in request.session.activities %}
+        <p style="text-align:center">{{ activity }}</p>
+        {% endfor %}
+    </div>
+    <div class="footer-basic" style="height:194px;background-color:rgb(98,99,120);width:100%;">
+        <footer>
+            <div class="social"><a href="#" style="background-color:#ded5d5;"><i class="icon ion-social-instagram"></i></a><a href="#" style="background-color:#ded5d5;"><i class="icon ion-social-snapchat"></i></a><a href="#" style="background-color:#ded5d5;"><i class="icon ion-social-twitter"></i></a><a href="#" style="background-color:#ded5d5;"><i class="icon ion-social-facebook"></i></a></div>
+            <ul
+            class="list-inline">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                </ul>
+                <p class="copyright">Ninja Gold Services© 2017</p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
