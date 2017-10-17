@@ -1,0 +1,3 @@
+# Robert_Amato
+Django/Python
+Hey everyone!! I'm completely new to the world of coding, and computers really for that matter. I've been a fireman for all my working career, and will be eligible for retirement in 11 months. Since I will only be 37yo, I decided to find something new to get into. I wanted something to challenge my mind, and something that is very practical. I'm looking to finish up this bootcamp and then spend the rest of my time before retirement studying and really engraining all this info into my head. Once eligible for retirement I will start looking for a new job/career that I can hopefully squeeze another 20 years out of!
