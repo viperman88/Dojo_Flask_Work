@@ -15,7 +15,7 @@
                     <p class="h1 text-white">Courses</p>
                 </nav>
                 {% if messages %}
-                    <div class="messages">
+                    <div class="alert alert-danger" role="alert">
                         {% for message in messages %}
                         <p>{{ message }}</p>
                         {% endfor %}
