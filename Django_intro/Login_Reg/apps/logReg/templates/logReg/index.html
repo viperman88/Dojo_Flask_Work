@@ -14,14 +14,14 @@
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                     <p class="h1 text-white">Login and Registration</p>
                 </nav>
-                <!--{% if messages %}
+                {% if messages %}
                     <div class="alert alert-danger" role="alert">
                         {% for message in messages %}
                         <p>{{ message }}</p>
                         {% endfor %}
                     </div>
-                {% endif %}-->
-                <form action="/courses/add_course" method="POST">
+                {% endif %}
+                <form action="/register" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
                         <h3>Login:</h3>
@@ -42,7 +42,7 @@
                     <input class="btn btn-outline-primary" style="margin-bottom:10px; "type="submit" value="Register">
                 </form>
 
-                <form action="/courses/add_course" method="POST">
+                <form action="/login" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
                         <h3>Login:</h3>

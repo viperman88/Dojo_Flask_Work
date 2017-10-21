@@ -1,32 +1,39 @@
 from __future__ import unicode_literals
+from .models import User
+from django.shortcuts import render, redirect
 from django.contrib import messages
-import bcrypt
-from django.contrib.messages import error
-from django.shortcuts import render, HttpResponse, redirect
 
 # Create your views here.
 def index(request):
 
     return render(request, 'logReg/index.html')
 
-def process(request):
-
-    errors = User.objects.user_reg_validation(request.POST)
-    print 'error len', len(errors)
-    if len(errors) > 0:
-        for tag, error in errors.iteritems():
-            messages.error(request, error)
+def register(request):
+    result = User.objects.validate_registration(request.POST)
+    if type(result) == list:
+        for err in result:
+            messages.error(request, err)
         return redirect('/')
-    else:
-        new_hash = bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt())
-        print new_hash
-        new_user = User(first_name=request.POST['first_name'], last_name=request.POST['last_name'], email=request.POST['email'], password_hash=new_hash)
-        new_user.save()
-        request.session['id'] = new_user.id
-        return redirect('/success')
+    request.session['user_id'] = result.id
+    #messages.success(request, "Successfully registered!")
+    return redirect('/success')
 
-    return render(request, 'logReg/index.html')
+def login(request):
+    result = User.objects.validate_login(request.POST)
+    if type(result) == list:
+        for err in result:
+            messages.error(request, err)
+        return redirect('/')
+    request.session['user_id'] = result.id
+    #messages.success(request, "Successfully logged in!")
+    return redirect('/success')
 
 def success(request):
-
-    return render(request, 'logReg/success.html')
+    try:
+        request.session['user_id']
+    except KeyError:
+        return redirect('/')
+    context = {
+        'user': User.objects.get(id=request.session['user_id'])
+    }
+    return render(request, 'logReg/success.html', context)
